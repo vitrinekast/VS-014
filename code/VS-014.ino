@@ -10,12 +10,15 @@
 #define rev_selector 10
 #define delay_time_in A7
 
+#define gran_len 100;
 const unsigned int d_size = 1900;  //Delay memory buffer size
 unsigned int val, d_val, d_time;
 int i, j;
 byte count = 2;
 bool rev = 0;
+bool gran = 0;
 bool repeat = 0;
+int granCount = 0;
 char delay_data[d_size + 1] = { NULL };    //Delay  memory buffer
 char delay_data_1[d_size + 1] = { NULL };  //Delay memory buffer
 
@@ -54,6 +57,12 @@ void sampling() {
 }
 
 void delay_sound() {
+  if(gran) granCount++;
+  
+  if(gran && granCount > gran_len) {
+    i = random(0, d_size - gran_len);
+    granCount = 0;
+  }
 
   i = i + 1;
   if (i > d_time) i = 0;
