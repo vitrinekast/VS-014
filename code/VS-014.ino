@@ -1,6 +1,8 @@
 /*****************************************************************************************************************************
   echoTrek - 8Bit Digital Delay / LO-FI Bitcrusher / Reverse Speech DSP Pedal Effects  for Guitar, Voice, Synths, etc.
   Works with Arduino UNO R3 / NANO / PRO MINI  - See the schematics for wiring details. By J. CesarSound - ver 1.0 - Jan/2021.
+  
+  Accessed From: https://projecthub.arduino.cc/CesarSound/c4f2fdea-9035-44a8-9e2c-60ea6ff38159
 ******************************************************************************************************************************/
 
 #define audio_in A0
